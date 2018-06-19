@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="presenter"
+            type="com.yulin.common.listener.IPresenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.yulin.common.widget.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </com.yulin.common.widget.NoScrollViewPager>
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/divider_b2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="@color/bg_bottom_bar"
+            android:orientation="horizontal" >
+
+            <com.yulin.common.widget.TabItem
+                android:id="@+id/tab_main"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> presenter.onViewClick(v)}"
+                android:padding="5dp"
+                app:icon="@drawable/ic_home_white_24dp"
+                app:text="@string/tab_main"
+                app:text_size="12sp" />
+
+            <com.yulin.common.widget.TabItem
+                android:id="@+id/tab_category"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> presenter.onViewClick(v)}"
+                android:padding="5dp"
+                app:icon="@drawable/ic_group_work_white_24dp"
+                app:text="@string/tab_category"
+                app:text_size="12sp" />
+
+            <com.yulin.common.widget.TabItem
+                android:id="@+id/tab_discovery"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> presenter.onViewClick(v)}"
+                android:padding="5dp"
+                app:icon="@drawable/ic_explore_white_24dp"
+                app:text="@string/tab_discovery"
+                app:text_size="12sp" />
+
+            <com.yulin.common.widget.TabItem
+                android:id="@+id/tab_mine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> presenter.onViewClick(v)}"
+                android:padding="5dp"
+                app:icon="@drawable/ic_perm_identity_white_24dp"
+                app:text="@string/tab_mine"
+                app:text_size="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    
+</layout>

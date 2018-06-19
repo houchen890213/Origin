@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.yulin.origin"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 避免单个dex对方法数的限制, Enabling multidex support.
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        debug {
+            v2SigningEnabled false
+        }
+        release {
+            storeFile file('~/data/secret/android_apk_key_store_yulin_20180619')
+            keyAlias 'key0'
+            keyPassword KEY_PASSWORD
+            storePassword KEYSTORE_PASSWORD
+
+            // 满足下面两个条件时需要此配置
+            // 1. Gradle版本 >= 2.14.1
+            // 2. Android Gradle Plugin 版本 >= 2.2.0
+            // 作用是只使用旧版签名，禁用V2版签名模式
+            // https://github.com/mcxiaoke/packer-ng-plugin/blob/master/compatibility.md
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+        debug {
+            zipAlignEnabled true
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
+        release {
+            //是否进行zipalign优化
+            zipAlignEnabled true
+            //指定签名文件
+            signingConfig signingConfigs.release
+            // 是否进行混淆
+            minifyEnabled true
+            // 指定混淆规则文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':common')
+    implementation project(':io')
+
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.0'
+    // If you want to bind to Android-specific life_cycles
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.0'
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    implementation 'com.android.support:recyclerview-v7:28.0.0-alpha3'
+
+    // rxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // network
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+}

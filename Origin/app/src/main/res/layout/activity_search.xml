@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="presenter"
+            type="com.yulin.common.listener.IPresenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_search"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_search_title_bar"
+            android:paddingTop="@dimen/status_bar_height_full">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp">
+                
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="58.8dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:onClick="@{(v) -> presenter.onViewClick(v)}"
+                    android:text="取消"
+                    android:textSize="@dimen/text_item"
+                    android:textColor="@color/text_search_cancel"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30.5dp"
+                    android:layout_toLeftOf="@id/tv_cancel"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8.7dp"
+                    android:background="@drawable/shape_bg_white_round"/>
+
+                <ImageView
+                    android:id="@+id/iv_search_logo"
+                    android:layout_width="27.8dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8.7dp"
+                    android:src="@drawable/ic_search_grey"
+                    android:scaleType="centerInside"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/iv_search_logo"
+                    android:layout_toLeftOf="@id/tv_cancel"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"/>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="#d6d7dc"/>
+
+    </LinearLayout>
+
+</layout>

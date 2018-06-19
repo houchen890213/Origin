@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.yulin.origin.business.category.bean.CategorySectionBean"/>
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="@{bean.name}"
+        android:textSize="13sp"
+        android:textColor="#8e8e93"
+        android:gravity="center_vertical"
+        android:paddingLeft="11dp"
+        android:background="#d8d8de"/>
+
+</layout>

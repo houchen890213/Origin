@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimary">@color/bg_title_bar</item>
+        <item name="colorPrimaryDark">@color/bg_status_bar</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/text_title_bar_menu</item>
+        <!-- specify title text color -->
+        <item name="android:textColorPrimary">@color/text_title_bar_title</item>
+        <!-- specify navigation icon style -->
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButton</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ToolbarNavigationButton" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+</resources>

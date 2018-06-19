@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="icon" format="reference"/>
+    <attr name="color" format="color"/>
+    <attr name="text" format="string"/>
+    <attr name="text_size" format="dimension"/>
+
+    <declare-styleable name="CustomButton">
+        <attr name="radius" format="dimension" />
+        <attr name="normalBgColor" format="color" />
+        <attr name="pressBgColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="color" />
+    </declare-styleable>
+
+    <!-- 实心圆形 -->
+    <declare-styleable name="RoundView">
+        <attr name="round_solidColor" format="color" />
+        <attr name="round_borderWidth" format="dimension" />
+        <attr name="round_borderColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TabItem">
+        <attr name="icon"/>
+        <attr name="color"/>
+        <attr name="text"/>
+        <attr name="text_size"/>
+    </declare-styleable>
+
+    <!-- titlebar自定义属性 -->
+    <declare-styleable name="SZTitlebar">
+        <attr name="android:layout_height" />
+        <attr name="title_txt_size" format="dimension" />
+        <attr name="title_txt_color" format="color" />
+        <attr name="is_translucentBar" format="boolean" />
+    </declare-styleable>
+
+    <!--TabIndicator的参数设置-->
+    <declare-styleable name="PagerSlidingTab">
+        <attr name="indicatorColor" format="color" />
+        <attr name="underlineColor" format="color" />
+        <attr name="dividerColor" format="color" />
+        <attr name="indicatorHeight" format="dimension" />
+        <attr name="underlineHeight" format="dimension" />
+        <attr name="pst_dividerPadding" format="dimension" />
+        <attr name="tabPaddingLeftRight" format="dimension" />
+        <attr name="scrollOffset" format="dimension" />
+        <attr name="tabBackgrounds" format="reference" />
+        <attr name="sameLine" format="boolean" />
+        <attr name="pst_textAllCaps" format="boolean" />
+    </declare-styleable>
+
+</resources>

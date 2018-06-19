@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="presenter"
+            type="com.yulin.common.listener.IPresenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_grey"
+        android:orientation="vertical">
+
+        <include layout="@layout/ly_title_bar_full"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16.5dp"/>
+
+        <include layout="@layout/ly_divider_d9"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="@string/square"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="朋友圈"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="论坛"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="22dp"/>
+
+        <include layout="@layout/ly_divider_d9"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="排行榜"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="话题中心"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="活动中心"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="附近的人"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="22dp"/>
+
+        <include layout="@layout/ly_divider_d9"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="游戏"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9_short"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@drawable/selector_bg_item"
+            android:onClick="@{(v) -> presenter.onViewClick(v)}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="周边商城"
+                android:textSize="@dimen/text_item"
+                android:textColor="@color/text_item_name"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_padding_left" />
+
+            <ImageView
+                android:layout_width="@dimen/item_height"
+                android:layout_height="@dimen/item_height"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_arrow_right"
+                android:scaleType="centerInside"/>
+        </RelativeLayout>
+        <include layout="@layout/ly_divider_d9"/>
+
+    </LinearLayout>
+
+</layout>
