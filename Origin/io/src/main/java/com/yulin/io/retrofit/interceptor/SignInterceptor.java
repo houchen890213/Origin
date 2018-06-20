@@ -3,7 +3,7 @@ package com.yulin.io.retrofit.interceptor;
 
 import android.util.Log;
 
-import com.houchen.io.retrofit.sign.SignCalculate;
+import com.yulin.io.retrofit.sign.SignCalculate;
 
 import java.io.IOException;
 import java.util.Date;

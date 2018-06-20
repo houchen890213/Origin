@@ -1,6 +1,6 @@
 package com.yulin.io.retrofit.config;
 
-import com.houchen.io.retrofit.sign.SignCalculate;
+import com.yulin.io.retrofit.sign.SignCalculate;
 
 import java.util.HashMap;
 import java.util.Map;
