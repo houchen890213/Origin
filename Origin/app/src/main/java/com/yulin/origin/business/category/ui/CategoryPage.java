@@ -1,11 +1,7 @@
 package com.yulin.origin.business.category.ui;
 
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.yulin.common.adapter.pure.OnItemClickListener;
 import com.yulin.common.adapter.pure.PureAdapter;
@@ -14,7 +10,6 @@ import com.yulin.common.logger.Logger;
 import com.yulin.frame.base.ui.PageImpl;
 import com.yulin.io.retrofit.observer.BaseObserver;
 import com.yulin.io.retrofit.response.RequestRet;
-import com.yulin.origin.BR;
 import com.yulin.origin.R;
 import com.yulin.origin.business.category.adapter.CategoryAdapter;
 import com.yulin.origin.business.category.bean.CategoryBean;
@@ -95,14 +90,11 @@ public class CategoryPage extends PageImpl<PageCategoryBinding> {
         mVm.requestCategory(new BaseObserver<RequestRet>() {
             @Override
             public void onComplete() {
-                super.onComplete();
                 refreshEnd();
-//                mAdapter.expandAll();
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                super.onError(e);
                 refreshEnd();
                 Logger.e(e.getMessage());
             }

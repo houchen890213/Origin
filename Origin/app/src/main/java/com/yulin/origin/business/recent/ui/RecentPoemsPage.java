@@ -3,8 +3,8 @@ package com.yulin.origin.business.recent.ui;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.yulin.common.adapter.DbBaseAdapter;
+import com.yulin.common.adapter.pure.OnItemClickListener;
+import com.yulin.common.adapter.pure.PureAdapter;
 import com.yulin.common.annotation.Content;
 import com.yulin.common.logger.Logger;
 import com.yulin.frame.base.ui.PageImpl;
@@ -23,7 +23,7 @@ import io.reactivex.annotations.NonNull;
 public class RecentPoemsPage extends PageImpl<PageRecentPoemsBinding> {
 
     private RecentPoemsVm mVm;
-    private DbBaseAdapter<PoemItemBean> adapter;
+    private PureAdapter<PoemItemBean> mAdapter;
 
     @Override
     public void initView() {
@@ -35,17 +35,17 @@ public class RecentPoemsPage extends PageImpl<PageRecentPoemsBinding> {
         binding.setVm(mVm);
 
         binding.contentView.setLayoutManager(new LinearLayoutManager(context));
-        adapter = new DbBaseAdapter<>(R.layout.item_poems, mVm.getItems(), BR.bean);
-        binding.contentView.setAdapter(adapter);
+        mAdapter = new PureAdapter<>(R.layout.item_poems, mVm.getItems(), BR.bean);
+        binding.contentView.setAdapter(mAdapter);
     }
 
     @Override
     public void initListener() {
         super.initListener();
 
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onItemClick(PureAdapter adapter, View view, int position) {
                 next(PoemContentActivity.class);
             }
         });
@@ -57,21 +57,13 @@ public class RecentPoemsPage extends PageImpl<PageRecentPoemsBinding> {
 
         mVm.requestPoems(new BaseObserver<RequestRet>() {
             @Override
-            public void onNext(@NonNull RequestRet requestRet) {
-                super.onNext(requestRet);
-            }
-
-            @Override
             public void onComplete() {
-                super.onComplete();
                 refreshEnd();
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                super.onError(e);
                 refreshEnd();
-
                 Logger.e(e.getMessage());
             }
         });

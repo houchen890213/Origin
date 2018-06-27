@@ -65,14 +65,14 @@ public class MainActivity extends ModuleImpl<ActivityMainBinding> {
         mTabs.add(binding.tabDiscovery);
         mTabs.add(binding.tabMine);
 
-        resetOtherTabs();
+        resetAllTabs();
         binding.tabMain.setState(TabItem.STATE_SELECT);
     }
 
     @Override
     public void onViewClick(View view) {
         super.onViewClick(view);
-        resetOtherTabs();
+        resetAllTabs();
 
         switch (view.getId()) {
             case R.id.tab_main:
@@ -111,7 +111,7 @@ public class MainActivity extends ModuleImpl<ActivityMainBinding> {
     /**
      * 重置其他的TabIndicator的颜色
      */
-    private void resetOtherTabs() {
+    private void resetAllTabs() {
         for (int i = 0; i < mTabs.size(); i++) {
             mTabs.get(i).setState(TabItem.STATE_NORMAL);
         }

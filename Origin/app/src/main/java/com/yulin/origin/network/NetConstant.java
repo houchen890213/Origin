@@ -8,7 +8,6 @@ package com.yulin.origin.network;
 public interface NetConstant {
 
     String HOST = "http://18.216.87.19:9821/";
-//    String HOST = "http://10.0.0.2:9999/";
 
     interface API {
         String POEMS = "1001";
