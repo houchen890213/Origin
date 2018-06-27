@@ -1,5 +1,10 @@
 package com.yulin.origin.business.content.response;
 
+import com.yulin.origin.network.NetworkManager;
+import com.yulin.origin.network.service.PoemService;
+
+import io.reactivex.Observable;
+
 /**
  * Created by liu_lei on 2017/6/29.
  */
@@ -141,6 +146,10 @@ public class PoemContentResponse {
                 ", translate='" + translate + '\'' +
                 ", appreciation='" + appreciation + '\'' +
                 '}';
+    }
+
+    public static Observable<PoemContentResponse> providePoemContent() {
+        return NetworkManager.getInstance().getService(PoemService.class).getPoemContent();
     }
 
 }

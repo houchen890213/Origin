@@ -65,8 +65,4 @@ public class NetworkManager extends ServiceManager {
         OkHttpUtils.getInstance().initConfig(networkAPIConfig);
     }
 
-    public <T> T getDemoService(Class<T> clz) {
-        return getService(clz);
-    }
-
 }

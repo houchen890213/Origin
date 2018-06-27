@@ -13,7 +13,6 @@ import com.yulin.origin.business.category.bean.CategorySectionBean;
 import com.yulin.origin.business.category.response.Book;
 import com.yulin.origin.business.category.response.CategoryResponse;
 import com.yulin.origin.business.category.response.Item;
-import com.yulin.origin.network.service.PoemService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,6 @@ import io.reactivex.functions.Function;
 
 /**
  * Created by liu_lei on 2017/7/2.
- *
  */
 
 public class CategoryVm extends BaseVm {
@@ -34,7 +32,7 @@ public class CategoryVm extends BaseVm {
     public void requestCategory(BaseObserver<RequestRet> observer) {
 //        String token = getUserInfo().getToken();
 
-        getService(PoemService.class).getCategory()
+        CategoryResponse.provideCategories()
                 .map(new Function<CategoryResponse, RequestRet>() {
                     @Override
                     public RequestRet apply(@NonNull CategoryResponse response) throws Exception {

@@ -7,7 +7,6 @@ import com.yulin.io.retrofit.observer.BaseObserver;
 import com.yulin.io.retrofit.response.RequestRet;
 import com.yulin.origin.BR;
 import com.yulin.origin.business.content.response.PoemContentResponse;
-import com.yulin.origin.network.service.PoemService;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -33,7 +32,7 @@ public class PoemContentVm extends BaseVm {
 
     // 获取诗词详情
     public void requestPoemContent(long poemId, BaseObserver<RequestRet> observer) {
-        getService(PoemService.class).getPoemContent()
+        PoemContentResponse.providePoemContent()
                 .map(new Function<PoemContentResponse, RequestRet>() {
                     @Override
                     public RequestRet apply(@NonNull PoemContentResponse response) throws Exception {
