@@ -8,6 +8,12 @@
 
         <include layout="@layout/ly_title_bar_full"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="我的"
+            android:gravity="center"/>
+
     </LinearLayout>
 
 </layout>

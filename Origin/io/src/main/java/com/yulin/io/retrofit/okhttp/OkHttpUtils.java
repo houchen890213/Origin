@@ -40,8 +40,8 @@ public class OkHttpUtils {
         builder.connectTimeout(config.getConnectTimeout(), TimeUnit.SECONDS);
         builder.writeTimeout(config.getWriteTimeout(), TimeUnit.SECONDS);
         builder.readTimeout(config.getReadTimeout(), TimeUnit.SECONDS);
-        SignInterceptor signInterceptor = new SignInterceptor(config.getSignCalculate(), config.getCommParameter());
-        builder.addInterceptor(signInterceptor);
+//        SignInterceptor signInterceptor = new SignInterceptor(config.getSignCalculate(), config.getCommParameter());
+//        builder.addInterceptor(signInterceptor);
         builder.addInterceptor(new LogInterceptor());
         okHttpClient = builder.build();
         createRetrofit();
