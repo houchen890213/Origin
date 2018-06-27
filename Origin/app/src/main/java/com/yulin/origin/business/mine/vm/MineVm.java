@@ -1,5 +1,7 @@
 package com.yulin.origin.business.mine.vm;
 
+import android.databinding.ObservableField;
+
 import com.yulin.frame.base.vm.BaseVm;
 
 /**
@@ -7,4 +9,7 @@ import com.yulin.frame.base.vm.BaseVm;
  */
 
 public class MineVm extends BaseVm {
+
+    public ObservableField<String> message = new ObservableField<>();
+
 }

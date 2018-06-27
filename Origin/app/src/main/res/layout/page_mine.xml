@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="vm"
+            type="com.yulin.origin.business.mine.vm.MineVm" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/ly_title_bar_full"/>
+        <include layout="@layout/ly_title_bar_full" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="我的"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="输入一段话吧" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@={vm.message}"
+            android:textColor="#353739" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="你输入的内容是：" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@{vm.message}"
+            android:textColor="#353739" />
 
     </LinearLayout>
 
