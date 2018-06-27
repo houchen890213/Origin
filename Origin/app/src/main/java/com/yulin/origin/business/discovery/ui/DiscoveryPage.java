@@ -31,4 +31,19 @@ public class DiscoveryPage extends PageImpl<PageDiscoveryBinding> {
         });
     }
 
+    @Override
+    public void onViewClick(View view) {
+        switch (view.getId()) {
+            case R.id.rl_square:
+                toast("广场");
+                break;
+            case R.id.rl_friends:
+                toast("朋友圈");
+                break;
+            case R.id.rl_bbs:
+                toast("论坛");
+                break;
+        }
+    }
+
 }

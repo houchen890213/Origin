@@ -21,6 +21,7 @@
 
         <include layout="@layout/ly_divider_d9"/>
         <RelativeLayout
+            android:id="@+id/rl_square"
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_height"
             android:background="@drawable/selector_bg_item"
@@ -43,6 +44,7 @@
         </RelativeLayout>
         <include layout="@layout/ly_divider_d9_short"/>
         <RelativeLayout
+            android:id="@+id/rl_friends"
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_height"
             android:background="@drawable/selector_bg_item"
@@ -65,6 +67,7 @@
         </RelativeLayout>
         <include layout="@layout/ly_divider_d9_short"/>
         <RelativeLayout
+            android:id="@+id/rl_bbs"
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_height"
             android:background="@drawable/selector_bg_item"
